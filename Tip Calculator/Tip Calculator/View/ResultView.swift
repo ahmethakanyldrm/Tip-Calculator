@@ -8,6 +8,8 @@
 import UIKit
 
 class ResultView: UIView {
+    
+    // MARK: - Properties
     private let headerLabel: UILabel = {
         LabelFactory.build(text: "Total p/person", font: ThemeFont.demibold(ofSize: 18))
 
@@ -46,6 +48,9 @@ class ResultView: UIView {
         return stackView
     }()
 
+    // MARK: - Initializers
+
+    
     init() {
         super.init(frame: .zero)
         layout()
@@ -55,6 +60,7 @@ class ResultView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Layout
     private func layout() {
         backgroundColor = .white
         addSubview(vStackView)
@@ -72,6 +78,7 @@ class ResultView: UIView {
         addShadow(offset: CGSize(width: 0, height: 3), color: .black, radius: 12.0, opacity: 0.1)
     }
 
+    
     private func buildSpacerView(height: CGFloat) -> UIView {
         let view = UIView()
         view.heightAnchor.constraint(equalToConstant: height).isActive = true
